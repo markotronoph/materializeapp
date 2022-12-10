@@ -1,0 +1,6 @@
+#charsheet {
+  width: 100vw;
+  width: 100vh;
+  position: relative;
+  padding: var(--pad);
+}
