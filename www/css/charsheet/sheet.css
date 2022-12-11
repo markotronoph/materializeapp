@@ -1,0 +1,20 @@
+.sheet {
+  width: 100%;
+  height: 100%;
+}
+
+.sheet > div {
+  width: 100%;
+}
+
+.sheet .companion {
+  width: 100%;
+  display: grid;
+  column-gap: var(--half-pad);
+  grid-template-columns: 1fr auto;
+}
+
+.sheet .companion .harm {
+  display: flex;
+  gap: var(--half-pad);
+}

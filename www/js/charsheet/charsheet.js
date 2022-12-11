@@ -1,11 +1,12 @@
 import component from '../common/component/creator.js';
 import landing from './landing.js';
+import sheet from './sheet.js';
 
 const top = component.instantiate('top', {});
 
 function onClickAdd(event) {
   event.stopPropagation();
-  top.setContent('Add');
+  top.setContent(sheet.getContainer());
 }
 
 function onClickLoad(event) {
