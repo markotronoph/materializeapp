@@ -1,0 +1,15 @@
+.top {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.top .header {
+  width: 100%;
+}
+
+.top .content {
+  width: 100%;
+  padding: var(--pad);
+}
