@@ -1,0 +1,83 @@
+/* stylelint-disable property-no-vendor-prefix */
+:root {
+  --pad: 1rem;
+  --half-pad: 0.5rem;
+}
+
+body {
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;                  /* prevent copy paste, to allow, change "none" to "text" */
+  user-select: none;                  /* prevent copy paste, to allow, change "none" to "text" */
+  font-size: 1.5rem;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 !important;
+  background-color: white;
+  color: black;
+  font-family: Roboto, "Noto Sans JP", sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/NotoSans/NotoSansCJKjp-Regular.eot");
+  src:
+    local("NotoSansCJKJPRegular"),
+    local("Noto Sans CJK JP Regular"),
+    url("../font/NotoSans/NotoSansCJKjp-Regular.woff2") format("woff2"),
+    url("../font/NotoSans/NotoSansCJKjp-Regular.woff") format("woff"),
+    url("../font/NotoSans/NotoSansCJKjp-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Roboto/Roboto-Regular.eot");
+  src:
+    local("Roboto"),
+    url("../font/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("../font/Roboto/Roboto-Regular.woff") format("woff"),
+    url("../font/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+/* https://developers.google.com/fonts/docs/material_icons */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/MaterialIcons/MaterialIcons-Regular.eot"); /* For IE6-8 */
+  src:
+    local("Material Icons"),
+    local("MaterialIcons-Regular"),
+    url("../font/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"),
+    url("../font/MaterialIcons/MaterialIcons-Regular.woff") format("woff"),
+    url("../font/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype");
+}
+
+.material-icons {
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizelegibility;
+}

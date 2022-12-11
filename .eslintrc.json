@@ -13,6 +13,8 @@
       "sourceType": "module"
   },
   "rules": {
+      "import/prefer-default-export": "off",
+      "class-methods-use-this": "off",
       "import/extensions": [0],
       "linebreak-style": 0,
       "no-unused-vars": ["error", {

@@ -1,5 +1,5 @@
-import util from './util/util.js';
-import charsheet from './charsheet.js';
+import util from './common/util/util.js';
+import charsheet from './charsheet/charsheet.js';
 
 const apps = {
   charsheet,
@@ -7,7 +7,7 @@ const apps = {
 
 function onDeviceReady() {
   const appName = util.getAppName();
-  apps[appName].init();
+  apps[appName].init($(`#${appName}`));
 }
 
 document.addEventListener('deviceready', onDeviceReady, false);
