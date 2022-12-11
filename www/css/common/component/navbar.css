@@ -2,6 +2,6 @@
   width: 100%;
 }
 
-.navbar-container .title {
+.navbar-container .nav-wrapper > .title {
   font-size: 1.5rem !important;
 }

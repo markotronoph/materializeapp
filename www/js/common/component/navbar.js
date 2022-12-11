@@ -26,7 +26,7 @@ const ui = {
     </li>
   `,
   dropdownItemTemplate: `
-    <li><a href='#!'></a></li>
+    <li><a href='#!' class='black-text'></a></li>
   `,
 };
 

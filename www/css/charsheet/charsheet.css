@@ -1,5 +1,16 @@
+body {
+  background-color: black !important;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 #charsheet {
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+nav {
+  background-color: black !important;
+  color: white !important;
 }
