@@ -1,8 +1,19 @@
 export class BaseComponent {
-  constructor({ html, option, data }) {
+  constructor({
+    html, option, data, className,
+  }) {
     this.$dom = $(html);
     this.setOption(option);
     this.setData(data);
+    this.setClassName(className);
+  }
+
+  setClassName(className) {
+    this.$dom.addClass(className);
+  }
+
+  removeClassName(className) {
+    this.$dom.removeClass(className);
   }
 
   setData(data) {
@@ -43,6 +54,10 @@ export class BaseComponent {
 
   empty() {
     this.$dom.empty();
+  }
+
+  remove(selector) {
+    $(selector, this.$dom).remove();
   }
 
   init() {

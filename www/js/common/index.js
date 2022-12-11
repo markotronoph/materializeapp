@@ -1,5 +1,5 @@
-import util from './common/util/util.js';
-import charsheet from './charsheet/charsheet.js';
+import util from './util/util.js';
+import charsheet from '../charsheet/charsheet.js';
 
 const apps = {
   charsheet,

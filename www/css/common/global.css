@@ -26,25 +26,25 @@ body * {
   font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: normal;
-  src: url("../font/NotoSans/NotoSansCJKjp-Regular.eot");
+  src: url("../../font/NotoSans/NotoSansCJKjp-Regular.eot");
   src:
     local("NotoSansCJKJPRegular"),
     local("Noto Sans CJK JP Regular"),
-    url("../font/NotoSans/NotoSansCJKjp-Regular.woff2") format("woff2"),
-    url("../font/NotoSans/NotoSansCJKjp-Regular.woff") format("woff"),
-    url("../font/NotoSans/NotoSansCJKjp-Regular.ttf") format("truetype");
+    url("../../font/NotoSans/NotoSansCJKjp-Regular.woff2") format("woff2"),
+    url("../../font/NotoSans/NotoSansCJKjp-Regular.woff") format("woff"),
+    url("../../font/NotoSans/NotoSansCJKjp-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  src: url("../font/Roboto/Roboto-Regular.eot");
+  src: url("../../font/Roboto/Roboto-Regular.eot");
   src:
     local("Roboto"),
-    url("../font/Roboto/Roboto-Regular.woff2") format("woff2"),
-    url("../font/Roboto/Roboto-Regular.woff") format("woff"),
-    url("../font/Roboto/Roboto-Regular.ttf") format("truetype");
+    url("../../font/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("../../font/Roboto/Roboto-Regular.woff") format("woff"),
+    url("../../font/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 /* https://developers.google.com/fonts/docs/material_icons */
@@ -52,13 +52,13 @@ body * {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url("../font/MaterialIcons/MaterialIcons-Regular.eot"); /* For IE6-8 */
+  src: url("../../font/MaterialIcons/MaterialIcons-Regular.eot"); /* For IE6-8 */
   src:
     local("Material Icons"),
     local("MaterialIcons-Regular"),
-    url("../font/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"),
-    url("../font/MaterialIcons/MaterialIcons-Regular.woff") format("woff"),
-    url("../font/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype");
+    url("../../font/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"),
+    url("../../font/MaterialIcons/MaterialIcons-Regular.woff") format("woff"),
+    url("../../font/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype");
 }
 
 .material-icons {

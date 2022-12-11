@@ -1,6 +1,8 @@
+import navbar from './navbar.js';
 import top from './top.js';
 
 const ui = {
+  navbar,
   top,
 };
 
