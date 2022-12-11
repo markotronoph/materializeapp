@@ -1,4 +1,5 @@
 import component from '../common/component/creator.js';
+import landing from './landing.js';
 
 const top = component.instantiate('top', {});
 
@@ -36,14 +37,13 @@ const navbarOption = {
 
 const navbar = component.instantiate('navbar', {
   option: navbarOption,
-  title: 'A Torch in the Dark Sheet',
 });
 
 function init($container) {
   $container.empty();
   $container.append(top.getDom());
   top.setHeader(navbar);
-  top.setContent('Add');
+  top.setContent(landing.getContainer());
   navbar.initDropdown();
 }
 
