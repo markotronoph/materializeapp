@@ -4,7 +4,26 @@
 }
 
 .sheet > div {
+  margin-bottom: var(--half-pad);
   width: 100%;
+}
+
+.sheet .skills,
+.sheet .conditions {
+  width: 100%;
+  display: grid;
+  column-gap: var(--half-pad);
+  grid-template-columns: repeat(2, 50%);
+}
+
+.sheet .inventory {
+  width: 100%;
+  display: grid;
+  column-gap: var(--half-pad);
+  grid-template-columns: repeat(3, 1fr);
+  padding: var(--half-pad);
+  border-radius: var(--half-pad);
+  border: solid 1px white;
 }
 
 .sheet .companion {
