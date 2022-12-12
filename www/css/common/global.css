@@ -81,3 +81,24 @@ body * {
   /* Support for Safari and Chrome. */
   text-rendering: optimizelegibility;
 }
+
+.font-sml {
+  font-size: 0.75rem;
+}
+
+.font-normal {
+  font-size: 1rem;
+}
+
+.font-lrg {
+  font-size: 1.25rem;
+}
+
+.font-xlrg {
+  font-size: 1.5rem;
+}
+
+.input-field {
+  margin-top: var(--half-pad) !important;
+  margin-bottom: var(--half-pad) !important;
+}
