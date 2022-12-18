@@ -14,11 +14,15 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "cordova-android": "^10.1.2",
+    "cordova-sqlite-storage": "^6.1.0",
     "jquery": "^3.6.1"
   },
   "cordova": {
     "platforms": [
       "android"
-    ]
+    ],
+    "plugins": {
+      "cordova-sqlite-storage": {}
+    }
   }
 }

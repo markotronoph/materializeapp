@@ -12,9 +12,11 @@ const ui = {
 
 export class Input extends BaseComponent {
   constructor({
-    option, data, value, label, type = ui.defaultType, placeholder,
+    option, data, value, label, type = ui.defaultType, placeholder, className,
   }) {
-    super({ html: ui.html, option, data });
+    super({
+      html: ui.html, option, data, className,
+    });
     this.init({
       option, data, value, label, type, placeholder,
     });

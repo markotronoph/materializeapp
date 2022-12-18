@@ -26,14 +26,18 @@
   border: solid 1px white;
 }
 
-.sheet .companion {
-  width: 100%;
-  display: grid;
+.sheet .five-column .content {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr);
   column-gap: var(--half-pad);
-  grid-template-columns: 1fr auto;
 }
 
-.sheet .companion .harm {
-  display: flex;
-  gap: var(--half-pad);
+.sheet .six-column .content {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: var(--half-pad);
+}
+
+.sheet .companions .companion-name {
+  width: 100%;
 }

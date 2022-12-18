@@ -10,16 +10,29 @@ const ui = {
 
 export class Container extends BaseComponent {
   constructor({
-    option, data, content,
+    option, data, content, isRow = false, className,
   }) {
-    super({ html: ui.html, option, data });
+    super({
+      html: ui.html, option, data, className,
+    });
     this.init({
-      option, data, content,
+      option, data, content, isRow,
     });
   }
 
   init(props) {
     this.setContent(props.content);
+    this.setIsRow(props.isRow);
+  }
+
+  setIsRow(isRow) {
+    this.select('.content').removeClass('row');
+    this.select('.content').removeClass('column');
+    if (!isRow) {
+      this.select('.content').addClass('column');
+      return;
+    }
+    this.select('.content').addClass('row');
   }
 
   setContent(content) {
