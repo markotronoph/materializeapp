@@ -78,6 +78,18 @@ export class BaseComponent {
     if (ui instanceof BaseComponent) {
       this.select(selector).empty().append(ui.getDom());
     }
+
+    if (Array.isArray(ui)) {
+      ui.forEach((elem) => {
+        if (elem instanceof jQuery) {
+          this.select(selector).append(elem);
+        }
+
+        if (elem instanceof BaseComponent) {
+          this.select(selector).append(elem.getDom());
+        }
+      });
+    }
   }
 }
 
