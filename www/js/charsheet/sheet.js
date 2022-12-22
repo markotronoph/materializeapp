@@ -1,16 +1,5 @@
+import { MAX } from './classes/character.js';
 import component from '../common/component/creator.js';
-
-const max = {
-  stress: 6,
-  corruption: 6,
-  inventory: 15,
-  experience: 10,
-  skills: 10,
-  conditions: 10,
-  stash: 20,
-  harm: 4,
-  companion: 4,
-};
 
 const ui = {
   html: `
@@ -91,7 +80,7 @@ function init(container, _character) {
 
   // skills
   state.skillList = [];
-  for (let index = 0; index < max.skills; index += 1) {
+  for (let index = 0; index < MAX.skills; index += 1) {
     const skill = component.instantiate('input', {
       type: 'text',
     });
@@ -101,7 +90,7 @@ function init(container, _character) {
 
   // conditions
   state.conditionList = [];
-  for (let index = 0; index < max.conditions; index += 1) {
+  for (let index = 0; index < MAX.conditions; index += 1) {
     const condition = component.instantiate('input', {
       type: 'text',
     });
@@ -111,7 +100,7 @@ function init(container, _character) {
 
   // inventory
   state.inventoryList = [];
-  for (let index = 0; index < max.inventory; index += 1) {
+  for (let index = 0; index < MAX.inventory; index += 1) {
     const inventory = component.instantiate('input', {
       type: 'text',
     });
@@ -122,7 +111,7 @@ function init(container, _character) {
   // stress
   state.stressList = [];
   const stressContainer = component.instantiate('container', { isRow: true, className: 'six-column' });
-  for (let index = 0; index < max.stress; index += 1) {
+  for (let index = 0; index < MAX.stress; index += 1) {
     const stress = component.instantiate('checkbox', { isChecked: false });
     state.stressList.push(stress);
   }
@@ -132,7 +121,7 @@ function init(container, _character) {
   // corruption
   state.corruptionList = [];
   const corruptionContainer = component.instantiate('container', { isRow: true, className: 'six-column' });
-  for (let index = 0; index < max.corruption; index += 1) {
+  for (let index = 0; index < MAX.corruption; index += 1) {
     const corruption = component.instantiate('checkbox', { isChecked: false });
     state.corruptionList.push(corruption);
   }
@@ -142,7 +131,7 @@ function init(container, _character) {
   // experience
   state.experienceList = [];
   const experienceContainer = component.instantiate('container', { isRow: true, className: 'five-column' });
-  for (let index = 0; index < max.experience; index += 1) {
+  for (let index = 0; index < MAX.experience; index += 1) {
     const experience = component.instantiate('checkbox', { isChecked: false });
     state.experienceList.push(experience);
   }
@@ -152,7 +141,7 @@ function init(container, _character) {
   // stash
   state.stashList = [];
   const stashContainer = component.instantiate('container', { isRow: true, className: 'five-column' });
-  for (let index = 0; index < max.stash; index += 1) {
+  for (let index = 0; index < MAX.stash; index += 1) {
     const stash = component.instantiate('checkbox', { isChecked: false });
     state.stashList.push(stash);
   }
@@ -161,13 +150,13 @@ function init(container, _character) {
 
   // companion
   state.companionMap = new Map();
-  for (let index = 0; index < max.companion; index += 1) {
+  for (let index = 0; index < MAX.companion; index += 1) {
     const companionName = component.instantiate('input', { type: 'text', className: 'companion-name' });
     const companion = {
       companionName,
       harmList: [],
     };
-    for (let idx = 0; idx < max.harm; idx += 1) {
+    for (let idx = 0; idx < MAX.harm; idx += 1) {
       const harm = component.instantiate('checkbox', { isChecked: false });
       companion.harmList.push(harm);
     }
