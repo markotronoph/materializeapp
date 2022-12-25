@@ -19,9 +19,18 @@ function getUpdateValueList(record) {
 function getCreateTableQuery(columnList) {
   let createTableQuery = 'id INTEGER PRIMARY KEY';
   columnList.forEach((column) => {
+    if (column === 'id') return;
     createTableQuery += `, ${column} TEXT NOT NULL`;
   });
   return createTableQuery;
+}
+
+function getResultList(result) {
+  const resultList = [];
+  for (let index = 0; index < result.rows.length; index += 1) {
+    resultList.push(result.rows.item(index));
+  }
+  return resultList;
 }
 
 function openDb(name) {
@@ -45,14 +54,14 @@ function createRecord({ database, table, record }) {
       reject(new Error(`createRecord unsuccessful: database: ${database}, record: ${record}, table: ${table}`));
     }
     database.transaction((tx) => {
-      tx.executesSql(
+      tx.executeSql(
         `
-          INSERT INTO ${table} (${Object.keys(record).join()})
-          VALUES (${Object.keys(record).map((_key) => '?').join()})});
+        INSERT INTO ${table} (${Object.keys(record).join(', ')})
+        VALUES (${Object.keys(record).map((_key) => '?').join(', ')});
         `, // Query
         Object.values(record).map((val) => val.toString()),
-        (_tx, res) => {
-          resolve(res);
+        (_tx, result) => {
+          resolve(getResultList(result));
         }, // onSuccessCallback
         (error) => {
           reject(error);
@@ -63,7 +72,7 @@ function createRecord({ database, table, record }) {
   return promise;
 }
 
-function readAllRecord({ database, table }) {
+function readAllRecords({ database, table }) {
   const promise = new Promise((resolve, reject) => {
     if (!database || !table) {
       reject(new Error(`readRecord unsuccessful: database: ${database}, table: ${table}`));
@@ -74,8 +83,8 @@ function readAllRecord({ database, table }) {
           SELECT * FROM ${table}
         `, // Query
         [],
-        (_tx, { rows }) => {
-          resolve(rows);
+        (_tx, result) => {
+          resolve(getResultList(result));
         }, // onSuccessCallback
         (error) => {
           reject(error);
@@ -97,8 +106,8 @@ function readRecordById({ database, table, id }) {
           SELECT * FROM ${table} WHERE id = ?
         `, // Query
         [id],
-        (_tx, { rows }) => {
-          resolve(rows);
+        (_tx, result) => {
+          resolve(getResultList(result));
         }, // onSuccessCallback
         (error) => {
           reject(error);
@@ -120,8 +129,8 @@ function updateRecord({ database, table, record }) {
           UPDATE ${table} SET ${getUpdateQuery(record)} WHERE id = ?
         `, // QUERY
         getUpdateValueList(record),
-        (_tx, res) => {
-          resolve(res);
+        (_tx, result) => {
+          resolve(getResultList(result));
         }, // onSuccessCallback
         (error) => {
           reject(error);
@@ -183,7 +192,7 @@ function createTable({ database, table, columnList }) {
 export default {
   openDb,
   createRecord,
-  readAllRecord,
+  readAllRecords,
   readRecordById,
   updateRecord,
   deleteRecord,

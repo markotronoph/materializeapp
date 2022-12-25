@@ -1,6 +1,7 @@
 import component from '../common/component/creator.js';
 import landing from './landing.js';
 import sheet from './sheet.js';
+import database from './database.js';
 
 const top = component.instantiate('top', {});
 
@@ -40,7 +41,8 @@ const navbar = component.instantiate('navbar', {
   option: navbarOption,
 });
 
-function init($container) {
+async function init($container) {
+  await database.init();
   $container.empty();
   $container.append(top.getDom());
   top.setHeader(navbar);

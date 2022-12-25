@@ -5,9 +5,9 @@ const apps = {
   charsheet,
 };
 
-function onDeviceReady() {
+async function onDeviceReady() {
   const appName = util.getAppName();
-  apps[appName].init($(`#${appName}`));
+  await apps[appName].init($(`#${appName}`));
 }
 
 document.addEventListener('deviceready', onDeviceReady, false);
